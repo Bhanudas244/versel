@@ -5,9 +5,15 @@ const express = require("express");
 const port = process.env.PORT || 4000;
 const app = express();
 
-app.get('/hello-world', (request, response) => {
-  response.send('Hello World!');
+app.get('/', (request, response) => {
+    response.send('HomePage');
+  });
+app.get('/about', (request, response) => {
+  response.send('About');
 });
+app.get('/contact', (request, response) => {
+    response.send('Contact to us');
+  });
 
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
