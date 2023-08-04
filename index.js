@@ -9,8 +9,7 @@ var path = require('path');
   app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (request, response) => {
-    
-    res. sendFile(path. join(__dirname, 'public', 'home.html'));
+    response.send('HomePage');
   });
 app.get('/about', (request, response) => {
   response.send('<h1>About</h1>');
