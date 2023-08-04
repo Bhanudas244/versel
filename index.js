@@ -4,9 +4,13 @@ const express = require("express");
 
 const port = process.env.PORT || 4000;
 const app = express();
+var path = require('path');
+
+  app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (request, response) => {
-    response.send('HomePage');
+    
+    res. sendFile(path. join(__dirname, 'public', 'home.html'));
   });
 app.get('/about', (request, response) => {
   response.send('<h1>About</h1>');
