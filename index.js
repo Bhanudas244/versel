@@ -9,7 +9,7 @@ app.get('/', (request, response) => {
     response.send('HomePage');
   });
 app.get('/about', (request, response) => {
-  response.send('About');
+  response.send('<h1>About</h1>');
 });
 app.get('/contact', (request, response) => {
     response.send('Contact to us');
