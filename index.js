@@ -1,17 +1,19 @@
-import express from 'express'
+const express = require('express')
+
 const app = express()
-const port = 9000
+const PORT = 4000
 
-
-app.use("/",(req,res)=>{
-    try {
-        res.json({message:"Hello From Express App"})
-        
-    } catch (error) {
-       console.log(error); 
-    }
+app.listen(PORT, () => {
+  console.log(`API listening on PORT ${PORT} `)
 })
 
-app.listen(port,()=>{
-    console.log(`Server running on port ${port}`);
+app.get('/', (req, res) => {
+  res.send('Hey this is my API running 🥳')
 })
+
+app.get('/about', (req, res) => {
+  res.send('This is my about route..... ')
+})
+
+// Export the Express API
+module.exports = app
