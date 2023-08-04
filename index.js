@@ -1,12 +1,17 @@
+// [index.js] with server app export.
 
-// index.js
-const express = require('express')
-const app = express()
-app.get('/api',(req,res)=>{
-    res.send(`<h5 style="color:green">
-        Hey Geek! you just deployed serverless express api</h5>`)
-})
-app.listen(8080,()=>{
-    console.log('Server started at http://localhost:8080')
-})
-module.exports=app
+const express = require("express");
+
+const port = process.env.PORT || 4000;
+const app = express();
+
+app.get('/hello-world', (request, response) => {
+  response.send('Hello World!');
+});
+
+app.listen(port, () => {
+  console.log(`[server]: Server is running at http://localhost:${port}`);
+});
+
+// Export the Express API
+module.exports = app;
